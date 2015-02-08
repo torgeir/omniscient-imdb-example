@@ -1,0 +1,41 @@
+@import './includes';
+.imdb-result {
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+  color: @color-text;
+
+  &:focus {
+    background-color: #efefef;
+  }
+}
+
+.imdb-result-info {
+  padding: 0 1rem;
+  flex: 10;
+  display: flex;
+  flex-direction: column;
+}
+
+.imdb-result-image-container {
+  flex: 1;
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.imdb-result-heading,
+.imdb-result-starring {
+  margin: 0.5rem 0;
+  flex: 1;
+}
+
+.imdb-result-heading {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
