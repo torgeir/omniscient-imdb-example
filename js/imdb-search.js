@@ -4,7 +4,7 @@ import component from 'omniscient';
 import ImdbStore from './imdb-store';
 import '../less/imdb-search.less';
 import {focusWhenNotSelected} from './focus-mixins';
-import {navigateOnArrowKeys, navigateOnTabKeys} from './keyboard-nav';
+import {navigateOnKeys} from './keyboard-nav';
 
 export default component('ImdbSearch',
                          focusWhenNotSelected,
@@ -14,6 +14,5 @@ export default component('ImdbSearch',
     type='text'
     value={query.deref()}
     onChange={e => ImdbStore.search(e.target.value)}
-    onKeyUp={navigateOnArrowKeys}
-    onKeyDown={navigateOnTabKeys}
+    onKeyDown={navigateOnKeys}
     />);

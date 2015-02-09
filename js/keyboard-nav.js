@@ -1,18 +1,19 @@
 import ImdbStore from './imdb-store';
 
-export let navigateOnArrowKeys = e => {
+export let navigateOnKeys = e => {
   let keyCode = e.keyCode;
-  if (keyCode == 38)
+  if (keyCode == 38) {
+    e.preventDefault(); // prevent scrolling up
     ImdbStore.selectPrev();
-  else if (keyCode == 40)
+  }
+  else if (keyCode == 40) {
+    e.preventDefault(); // prevent scrolling up
     ImdbStore.selectNext();
-  else if (keyCode == 27)
+  }
+  else if (keyCode == 27) {
     ImdbStore.clear();
-};
-
-export let navigateOnTabKeys = e => {
-  let keyCode = e.keyCode;
-  if (keyCode == 9) {
+  }
+  else if (keyCode == 9) {
     e.preventDefault(); // keep track ourselves
     if (e.shiftKey)
       ImdbStore.selectPrev();
