@@ -7,6 +7,6 @@ import '../less/index.less';
 let render = () =>
   React.render(
     App(),
-    document.body);
+    document.querySelector('.app'));
 
 render();
