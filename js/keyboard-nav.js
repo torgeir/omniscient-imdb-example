@@ -1,7 +1,7 @@
 import ImdbStore from './imdb-store';
 
-export let navigateOnKeys = e => {
-  let keyCode = e.keyCode;
+export const navigateOnKeys = (e) => {
+  const keyCode = e.keyCode;
   if (keyCode == 38) {
     e.preventDefault(); // prevent scrolling up
     ImdbStore.selectPrev();

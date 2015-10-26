@@ -1,11 +1,11 @@
-import JSONP from 'browser-jsonp';
+import jsonp from 'browser-jsonp';
 
 export default function jsonpSearch (query, fn) {
   if (!query) return;
-  query = query.toLowerCase().replace(/ /, '_');
+  const q = query.toLowerCase().replace(/ /, '_');
 
-  var callbackName = 'imdb$'+query;
+  const callbackName = `imdb$${q}`;
   window[callbackName] = fn;
 
-  JSONP({ url: 'http://sg.media-imdb.com/suggests/' + query[0] + '/' + query + '.json' });
+  jsonp({ url: `http://sg.media-imdb.com/suggests/${q[0]}/${q}.json` });
 }

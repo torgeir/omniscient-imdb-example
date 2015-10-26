@@ -7,9 +7,9 @@ import ImdbResults from './imdb-results';
 
 import '../less/imdb.less';
 
-let forceUpdateOnImdbResult = {
+const forceUpdateOnImdbResult = {
   componentDidMount: function () {
-    ImdbStore.on('change', _ => this.forceUpdate());
+    ImdbStore.on('change', (_) => this.forceUpdate());
     ImdbStore.search('Clerks');
   }
 };
@@ -18,7 +18,7 @@ export default component('Imdb',
                          forceUpdateOnImdbResult,
                          () =>
   <div className='imdb'>
-    <ImdbSearch.jsx query={ImdbStore.query()} selected={ImdbStore.selected()} />
-    <ImdbResults.jsx results={ImdbStore.results()} selected={ImdbStore.selected()} />
+    <ImdbSearch query={ ImdbStore.query() } selected={ ImdbStore.selected() } />
+    <ImdbResults results={ ImdbStore.results() } selected={ ImdbStore.selected() } />
   </div>);
 

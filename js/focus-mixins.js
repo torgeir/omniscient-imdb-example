@@ -1,12 +1,12 @@
-export let focusWhenNotSelected = {
 import ReactDOM from 'react-dom';
 
+export const focusWhenNotSelected = {
 
   componentDidUpdate: function () {
-    let selected = this.props.selected;
-    let hasNoSelected = (hasDeref(selected) && !selected.deref());
+    const selected = this.props.selected;
+    const hasNoSelected = (hasDeref(selected) && !selected.deref());
 
-    let isNotSelected = !this.props.isSelected;
+    const isNotSelected = !this.props.isSelected;
 
     if (isNotSelected || hasNoSelected) {
       ReactDOM.findDOMNode(this).focus();
@@ -14,13 +14,13 @@ import ReactDOM from 'react-dom';
   }
 };
 
-export let focusWhenSelected = {
+export const focusWhenSelected = {
 
   componentDidUpdate: function () {
-    let selected = this.props.selected;
-    let hasSelected = (hasDeref(selected) && selected.deref());
+    const selected = this.props.selected;
+    const hasSelected = (hasDeref(selected) && selected.deref());
 
-    let isSelected = this.props.isSelected;
+    const isSelected = this.props.isSelected;
 
     if (hasSelected || isSelected) {
       ReactDOM.findDOMNode(this).focus();
