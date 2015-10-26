@@ -1,11 +1,11 @@
 import React from 'react';
-import component from 'omniscient';
+import ReactDOM from 'react-dom';
 
 import App from './app';
 import '../less/index.less';
 
-let render = () =>
-  React.render(
+const render = () =>
+  ReactDOM.render(
     App(),
     document.querySelector('.app'));
 

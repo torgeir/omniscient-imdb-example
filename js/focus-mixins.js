@@ -1,4 +1,6 @@
 export let focusWhenNotSelected = {
+import ReactDOM from 'react-dom';
+
 
   componentDidUpdate: function () {
     let selected = this.props.selected;
@@ -7,7 +9,7 @@ export let focusWhenNotSelected = {
     let isNotSelected = !this.props.isSelected;
 
     if (isNotSelected || hasNoSelected) {
-      this.getDOMNode().focus();
+      ReactDOM.findDOMNode(this).focus();
     }
   }
 };
@@ -21,7 +23,7 @@ export let focusWhenSelected = {
     let isSelected = this.props.isSelected;
 
     if (hasSelected || isSelected) {
-      this.getDOMNode().focus();
+      ReactDOM.findDOMNode(this).focus();
     }
   }
 };
